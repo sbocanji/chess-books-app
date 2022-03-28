@@ -1,15 +1,20 @@
-package com.project.chessbooksapp.services.readers;
+package com.project.chessbooksapp.services.importService.parsers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public abstract class CSVReader<T, C extends Column> extends Reader<T> {
+public abstract class CSVParser<T, C extends Column> implements Parser<T> {
 
     @Override
-    List<T> readEntities(BufferedReader bufferedReader) {
+    public List<T> readEntities(InputStream inputStream) {
+        InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        BufferedReader bufferedReader = new BufferedReader(streamReader);
         List<T> entityList = new ArrayList<>();
         try {
             String line;

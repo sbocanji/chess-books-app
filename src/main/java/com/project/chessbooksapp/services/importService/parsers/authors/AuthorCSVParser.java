@@ -1,12 +1,12 @@
-package com.project.chessbooksapp.services.readers.authors;
+package com.project.chessbooksapp.services.importService.parsers.authors;
 
 import com.project.chessbooksapp.dto.AuthorDto;
-import com.project.chessbooksapp.services.readers.CSVReader;
+import com.project.chessbooksapp.services.importService.parsers.CSVParser;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AuthorCSVReader extends CSVReader<AuthorDto, AuthorColumns> {
+public class AuthorCSVParser extends CSVParser<AuthorDto, AuthorColumns> {
     @Override
     public AuthorDto readEntity(Map<AuthorColumns, Integer> headers, String[] values) {
         AuthorDto author = new AuthorDto();

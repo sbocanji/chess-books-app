@@ -1,26 +1,28 @@
-package com.project.chessbooksapp.services.readers;
+package com.project.chessbooksapp.services.importService.parsers;
 
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import org.apache.commons.io.IOUtils;
 
-import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonReader<T> extends Reader<T> {
+public class JsonParser<T> implements Parser<T> {
 
     private Class entityClass;
 
-    public JsonReader(Class entityClass) {
+    public JsonParser(Class entityClass) {
         this.entityClass = entityClass;
     }
 
     @Override
-    List<T> readEntities(BufferedReader bufferedReader) {
+    public List<T> readEntities(InputStream inputStream) {
         List<T> entityList = new ArrayList<>();
         ObjectMapper objectMapper = JsonMapper.builder().addHandler(new DeserializationProblemHandler() {
             @Override
@@ -29,11 +31,9 @@ public class JsonReader<T> extends Reader<T> {
                 return false;
             }
         }).build();
-        StringBuilder sb = new StringBuilder();
         try {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) sb.append(line);
-            JsonNode jsonNode = objectMapper.readTree(sb.toString());
+            String fileContent = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            JsonNode jsonNode = objectMapper.readTree(fileContent);
             for (JsonNode entityObject : jsonNode) {
                 T entity = (T) objectMapper.readValue(String.valueOf((T) entityObject), entityClass);
                 entityList.add(entity);

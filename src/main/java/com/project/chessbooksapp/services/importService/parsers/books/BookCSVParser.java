@@ -1,12 +1,12 @@
-package com.project.chessbooksapp.services.readers.books;
+package com.project.chessbooksapp.services.importService.parsers.books;
 
 import com.project.chessbooksapp.dto.BookDto;
-import com.project.chessbooksapp.services.readers.CSVReader;
+import com.project.chessbooksapp.services.importService.parsers.CSVParser;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class BookCSVReader extends CSVReader<BookDto, BookColumns> {
+public class BookCSVParser extends CSVParser<BookDto, BookColumns> {
     @Override
     public BookDto readEntity(Map<BookColumns, Integer> headers, String[] values) {
         BookDto book = new BookDto();

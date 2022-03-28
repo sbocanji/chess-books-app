@@ -1,6 +1,6 @@
-package com.project.chessbooksapp.services.readers.books;
+package com.project.chessbooksapp.services.importService.parsers.books;
 
-import com.project.chessbooksapp.services.readers.Column;
+import com.project.chessbooksapp.services.importService.parsers.Column;
 
 import java.util.Arrays;
 
