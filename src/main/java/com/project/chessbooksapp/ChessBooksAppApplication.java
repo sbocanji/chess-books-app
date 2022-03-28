@@ -20,10 +20,10 @@ public class ChessBooksAppApplication {
         for (BookEntityDto book : books)
             System.out.println("ID: " + book.getId() + ", name: " + book.getBookName() + ", author: " + book.getAuthor());
         System.out.println("\n\n\n");
-//        CSVReader<AuthorEntityDto> authorReader = new AuthorCSVReader();
-//        List<AuthorEntityDto> authors = (List<AuthorEntityDto>) authorReader.readFile("igraci");
-//        for (AuthorEntityDto author : authors)
-//            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampionship());
+        AuthorCSVReader authorReader = new AuthorCSVReader();
+        List<AuthorEntityDto> authors = (List<AuthorEntityDto>) authorReader.readFile("igraci");
+        for (AuthorEntityDto author : authors)
+            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampion());
 
 
 //        SpringApplication.run(ChessBooksAppApplication.class, args);

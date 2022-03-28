@@ -4,16 +4,16 @@ public class AuthorEntityDto {
 
     private String playerName;
     private boolean active;
-    private boolean worldChampionship;
+    private boolean worldChampion;
     private String nationality;
 
     public AuthorEntityDto() {
     }
 
-    public AuthorEntityDto(String playerName, boolean active, boolean worldChampionship, String nationality) {
+    public AuthorEntityDto(String playerName, boolean active, boolean worldChampion, String nationality) {
         this.playerName = playerName;
         this.active = active;
-        this.worldChampionship = worldChampionship;
+        this.worldChampion = worldChampion;
         this.nationality = nationality;
     }
 
@@ -33,12 +33,12 @@ public class AuthorEntityDto {
         this.active = active;
     }
 
-    public boolean isWorldChampionship() {
-        return worldChampionship;
+    public boolean isWorldChampion() {
+        return worldChampion;
     }
 
-    public void setWorldChampionship(boolean worldChampionship) {
-        this.worldChampionship = worldChampionship;
+    public void setWorldChampion(boolean worldChampion) {
+        this.worldChampion = worldChampion;
     }
 
     public String getNationality() {

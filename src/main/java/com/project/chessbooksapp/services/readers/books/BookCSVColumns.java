@@ -9,8 +9,8 @@ public enum BookCSVColumns implements CSVColumns {
     NAME("bookName", true),
     AUTHOR("author", true);
 
-    private String columnName;
-    private boolean mandatory;
+    private final String columnName;
+    private final boolean mandatory;
 
     BookCSVColumns(String columnName, boolean mandatory) {
         this.columnName = columnName;
