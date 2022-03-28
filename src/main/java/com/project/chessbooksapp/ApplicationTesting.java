@@ -27,5 +27,10 @@ public class ApplicationTesting implements CommandLineRunner {
         Reader<BookEntityDto> jsonReader = new JsonReader<>(BookEntityDto.class);
         List<BookEntityDto> newBooks = jsonReader.readFile("knjigeJson.json");
         for (BookEntityDto book : newBooks) System.out.println("ID: " + book.getId() + ", name: " + book.getBookName() + ", author: " + book.getAuthor());
+        System.out.println("\n\n\n");
+        Reader<AuthorEntityDto> jsonReaderAuthors = new JsonReader<>(AuthorEntityDto.class);
+        List<AuthorEntityDto> newAuthors = jsonReaderAuthors.readFile("igraciJson.json");
+        for (AuthorEntityDto author : newAuthors)
+            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampion());
     }
 }
