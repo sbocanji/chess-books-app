@@ -1,10 +1,10 @@
 package com.project.chessbooksapp.services.readers.authors;
 
-import com.project.chessbooksapp.services.readers.CSVColumns;
+import com.project.chessbooksapp.services.readers.Column;
 
 import java.util.Arrays;
 
-public enum AuthorCSVColumns implements CSVColumns {
+public enum AuthorCSVColumns implements Column {
     PLAYER_NAME("playerName", true),
     ACTIVE("active", true),
     WORLD_CHAMPION("worldChampion", true),

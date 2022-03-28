@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public abstract class CSVReader<T, C extends CSVColumns> extends Reader<T> {
+public abstract class CSVReader<T, C extends Column> extends Reader<T> {
 
     @Override
     List<T> readEntities(BufferedReader bufferedReader) {

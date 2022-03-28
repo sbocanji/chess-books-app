@@ -1,10 +1,10 @@
 package com.project.chessbooksapp.services.readers.books;
 
-import com.project.chessbooksapp.services.readers.CSVColumns;
+import com.project.chessbooksapp.services.readers.Column;
 
 import java.util.Arrays;
 
-public enum BookCSVColumns implements CSVColumns {
+public enum BookCSVColumns implements Column {
     ID("id", true),
     NAME("bookName", true),
     AUTHOR("author", true);
