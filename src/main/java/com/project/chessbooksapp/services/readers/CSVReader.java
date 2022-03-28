@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public abstract class CSVReader<T> extends Reader<T> {
+public abstract class CSVReader<T, C extends CSVColumns> extends Reader<T> {
 
     @Override
     List<T> readEntities(BufferedReader bufferedReader) {
@@ -14,10 +15,14 @@ public abstract class CSVReader<T> extends Reader<T> {
             String line;
             String headerLine = bufferedReader.readLine();
             String[] headers = headerLine.split(",");
+            Map<C, Integer> headerMap = getHeaderColumns(headers);
             while ((line = bufferedReader.readLine()) != null) {
-                if(line.equals("")) continue;;
+                if(line.equals("")) continue;
                 String[] values = line.split(",");
-                entityList.add(readEntity(headers, values));
+                headerMap.forEach((key, value) -> {
+                    if(key.isMandatory() && values[value].equals("")) throw new IllegalArgumentException("Invalid input.");
+                });
+                entityList.add(readEntity(headerMap, values));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -25,5 +30,8 @@ public abstract class CSVReader<T> extends Reader<T> {
         return entityList;
     }
 
-    public abstract T readEntity(String[] headers, String[] values);
+    public abstract T readEntity(Map<C, Integer> headers, String[] values);
+
+    public abstract Map<C, Integer> getHeaderColumns(String[] headers);
+
 }

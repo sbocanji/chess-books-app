@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class Reader<T> {
 
-    public List<?> readFile(String filePath) {
+    public List<T> readFile(String filePath) {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         InputStream is = classloader.getResourceAsStream(filePath);
         InputStreamReader streamReader = new InputStreamReader(is, StandardCharsets.UTF_8);
