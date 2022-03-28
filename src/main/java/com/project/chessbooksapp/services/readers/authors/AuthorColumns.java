@@ -4,7 +4,7 @@ import com.project.chessbooksapp.services.readers.Column;
 
 import java.util.Arrays;
 
-public enum AuthorCSVColumns implements Column {
+public enum AuthorColumns implements Column {
     PLAYER_NAME("playerName", true),
     ACTIVE("active", true),
     WORLD_CHAMPION("worldChampion", true),
@@ -13,7 +13,7 @@ public enum AuthorCSVColumns implements Column {
     private final String columnName;
     private final boolean mandatory;
 
-    AuthorCSVColumns(String columnName, boolean mandatory) {
+    AuthorColumns(String columnName, boolean mandatory) {
         this.columnName = columnName;
         this.mandatory = mandatory;
     }
@@ -28,7 +28,7 @@ public enum AuthorCSVColumns implements Column {
         return mandatory;
     }
 
-    public static AuthorCSVColumns getByName(String name) {
+    public static AuthorColumns getByName(String name) {
         return Arrays.stream(values()).filter(value -> value.getColumnName().equals(name)).findAny().orElseThrow(IllegalArgumentException::new);
     }
 }

@@ -1,28 +1,26 @@
 package com.project.chessbooksapp.services.readers.authors;
 
 import com.project.chessbooksapp.dto.AuthorEntityDto;
-import com.project.chessbooksapp.dto.BookEntityDto;
 import com.project.chessbooksapp.services.readers.CSVReader;
-import com.project.chessbooksapp.services.readers.books.BookCSVColumns;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AuthorCSVReader extends CSVReader<AuthorEntityDto, AuthorCSVColumns> {
+public class AuthorCSVReader extends CSVReader<AuthorEntityDto, AuthorColumns> {
     @Override
-    public AuthorEntityDto readEntity(Map<AuthorCSVColumns, Integer> headers, String[] values) {
+    public AuthorEntityDto readEntity(Map<AuthorColumns, Integer> headers, String[] values) {
         AuthorEntityDto author = new AuthorEntityDto();
-        author.setPlayerName(values[headers.get(AuthorCSVColumns.PLAYER_NAME)]);
-        author.setWorldChampion(values[headers.get(AuthorCSVColumns.WORLD_CHAMPION)].equals("y"));
-        author.setActive(values[headers.get(AuthorCSVColumns.ACTIVE)].equals("y"));
-        author.setNationality(values[headers.get(AuthorCSVColumns.NATIONALITY)]);
+        author.setPlayerName(values[headers.get(AuthorColumns.PLAYER_NAME)]);
+        author.setWorldChampion(values[headers.get(AuthorColumns.WORLD_CHAMPION)].equals("y"));
+        author.setActive(values[headers.get(AuthorColumns.ACTIVE)].equals("y"));
+        author.setNationality(values[headers.get(AuthorColumns.NATIONALITY)]);
         return author;
     }
 
     @Override
-    public Map<AuthorCSVColumns, Integer> getHeaderColumns(String[] headers) {
-        Map<AuthorCSVColumns, Integer> map = new HashMap<>();
-        for (int i = 0; i < headers.length; i++) map.put(AuthorCSVColumns.getByName(headers[i]), i);
+    public Map<AuthorColumns, Integer> getHeaderColumns(String[] headers) {
+        Map<AuthorColumns, Integer> map = new HashMap<>();
+        for (int i = 0; i < headers.length; i++) map.put(AuthorColumns.getByName(headers[i]), i);
         return map;
     }
 }

@@ -4,7 +4,7 @@ import com.project.chessbooksapp.services.readers.Column;
 
 import java.util.Arrays;
 
-public enum BookCSVColumns implements Column {
+public enum BookColumns implements Column {
     ID("id", true),
     NAME("bookName", true),
     AUTHOR("author", true);
@@ -12,7 +12,7 @@ public enum BookCSVColumns implements Column {
     private final String columnName;
     private final boolean mandatory;
 
-    BookCSVColumns(String columnName, boolean mandatory) {
+    BookColumns(String columnName, boolean mandatory) {
         this.columnName = columnName;
         this.mandatory = mandatory;
     }
@@ -27,7 +27,7 @@ public enum BookCSVColumns implements Column {
         return mandatory;
     }
 
-    public static BookCSVColumns getByName(String name) {
+    public static BookColumns getByName(String name) {
         return Arrays.stream(values()).filter(value -> value.getColumnName().equals(name)).findAny().orElseThrow(IllegalArgumentException::new);
     }
 }

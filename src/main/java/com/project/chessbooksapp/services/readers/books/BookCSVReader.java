@@ -6,20 +6,20 @@ import com.project.chessbooksapp.services.readers.CSVReader;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BookCSVReader extends CSVReader<BookEntityDto, BookCSVColumns> {
+public class BookCSVReader extends CSVReader<BookEntityDto, BookColumns> {
     @Override
-    public BookEntityDto readEntity(Map<BookCSVColumns, Integer> headers, String[] values) {
+    public BookEntityDto readEntity(Map<BookColumns, Integer> headers, String[] values) {
         BookEntityDto book = new BookEntityDto();
-        book.setId(values[headers.get(BookCSVColumns.ID)]);
-        book.setBookName(values[headers.get(BookCSVColumns.NAME)]);
-        book.setAuthor(values[headers.get(BookCSVColumns.AUTHOR)]);
+        book.setId(values[headers.get(BookColumns.ID)]);
+        book.setBookName(values[headers.get(BookColumns.NAME)]);
+        book.setAuthor(values[headers.get(BookColumns.AUTHOR)]);
         return book;
     }
 
     @Override
-    public Map<BookCSVColumns, Integer> getHeaderColumns(String[] headers) {
-        Map<BookCSVColumns, Integer> map = new HashMap<>();
-        for (int i = 0; i < headers.length; i++) map.put(BookCSVColumns.getByName(headers[i]), i);
+    public Map<BookColumns, Integer> getHeaderColumns(String[] headers) {
+        Map<BookColumns, Integer> map = new HashMap<>();
+        for (int i = 0; i < headers.length; i++) map.put(BookColumns.getByName(headers[i]), i);
         return map;
     }
 }
