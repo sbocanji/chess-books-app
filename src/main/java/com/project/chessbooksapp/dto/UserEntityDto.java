@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.domain;
+package com.project.chessbooksapp.dto;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class User {
+public class UserEntityDto {
     String username;
     String email;
     String preferenceOfAuthor;
