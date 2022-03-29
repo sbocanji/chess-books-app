@@ -27,8 +27,7 @@ public class JsonParser<T> implements Parser<T> {
         ObjectMapper objectMapper = JsonMapper.builder().addHandler(new DeserializationProblemHandler() {
             @Override
             public Object handleWeirdStringValue(DeserializationContext ctxt, Class<?> targetType, String valueToConvert, String failureMsg) throws IOException {
-                if (valueToConvert.equals("y")) return true;
-                return false;
+                return valueToConvert.equals("y");
             }
         }).build();
         try {
@@ -40,6 +39,7 @@ public class JsonParser<T> implements Parser<T> {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            throw new IllegalArgumentException("Unable to parse");
         }
         return entityList;
     }

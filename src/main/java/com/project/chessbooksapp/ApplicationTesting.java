@@ -9,6 +9,7 @@ import com.project.chessbooksapp.services.importService.parsers.JsonParser;
 import com.project.chessbooksapp.services.importService.parsers.Parser;
 import com.project.chessbooksapp.services.importService.parsers.books.BookXlsxParser;
 import com.project.chessbooksapp.services.importService.readers.LocalReader;
+import com.project.chessbooksapp.services.importService.readers.Reader;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,13 +19,14 @@ import java.util.List;
 @SpringBootApplication
 public class ApplicationTesting implements CommandLineRunner {
     @Override
-    public void run(String... args) throws Exception {
-        InputStream inputStreamBooks = new LocalReader().readFile("knjige");
-        InputStream inputStreamAuthors = new LocalReader().readFile("igraci");
-        InputStream inputStreamBooksJson = new LocalReader().readFile("knjigeJson.json");
-        InputStream inputStreamAuthorsJson = new LocalReader().readFile("igraciJson.json");
-        InputStream inputStreamBooksExcel = new LocalReader().readFile("knjigeExcel.xlsx");
-        InputStream inputStreamAuthorsExcel = new LocalReader().readFile("igraciXlsx.xlsx");
+    public void run(String... args) {
+        Reader localReader = new LocalReader();
+        InputStream inputStreamBooks = localReader.readFile("knjige");
+        InputStream inputStreamAuthors = localReader.readFile("igraci");
+        InputStream inputStreamBooksJson = localReader.readFile("knjigeJson.json");
+        InputStream inputStreamAuthorsJson = localReader.readFile("igraciJson.json");
+        InputStream inputStreamBooksExcel = localReader.readFile("knjigeExcel.xlsx");
+        InputStream inputStreamAuthorsExcel = localReader.readFile("igraciXlsx.xlsx");
 
         BookCSVParser bookReader = new BookCSVParser();
         List<BookDto> books = bookReader.readEntities(inputStreamBooks);
@@ -33,7 +35,7 @@ public class ApplicationTesting implements CommandLineRunner {
         System.out.println("\n\n\n");
 
         AuthorCSVParser authorReader = new AuthorCSVParser();
-        List<AuthorDto> authors = (List<AuthorDto>) authorReader.readEntities(inputStreamAuthors);
+        List<AuthorDto> authors = authorReader.readEntities(inputStreamAuthors);
         for (AuthorDto author : authors)
             System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampion());
 
