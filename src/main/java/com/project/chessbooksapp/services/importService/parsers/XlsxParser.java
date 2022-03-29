@@ -27,6 +27,9 @@ public abstract class XlsxParser<T, C extends Column> implements Parser<T> {
                     for (Cell cell : row) headers.add(cell.getStringCellValue());
                     headerMap = getHeaderColumns(headers);
                 } else {
+                    headerMap.forEach((key, value) -> {
+                        if(key.isMandatory() && row.getCell(value).getStringCellValue().equals("")) throw new IllegalArgumentException("Invalid input.");
+                    });
                     entityList.add(readEntity(headerMap, row));
                 }
             }
