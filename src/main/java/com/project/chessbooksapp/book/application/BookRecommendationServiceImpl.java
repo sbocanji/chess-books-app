@@ -27,7 +27,6 @@ public class BookRecommendationServiceImpl implements BookRecommendationService 
         books.forEach(book -> bookPairs.add(new Pair<>(book, reccomendBookChain.setScore(book, user, 0))));
         return bookPairs
                 .stream()
-                .filter(pair -> pair.getValue() > 20)
                 .sorted(Comparator.comparing(Pair::getValue))
                 .map(Pair::getKey)
                 .collect(Collectors.toList());
