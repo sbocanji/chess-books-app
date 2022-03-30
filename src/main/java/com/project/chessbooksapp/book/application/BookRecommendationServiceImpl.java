@@ -28,6 +28,7 @@ public class BookRecommendationServiceImpl implements BookRecommendationService 
         return bookPairs
                 .stream()
                 .sorted(Comparator.comparing(Pair::getValue))
+                .sorted(Collections.reverseOrder())
                 .map(Pair::getKey)
                 .collect(Collectors.toList());
 
