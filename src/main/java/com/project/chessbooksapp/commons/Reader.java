@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.services.importService.readers;
+package com.project.chessbooksapp.commons;
 
 import java.io.*;
 

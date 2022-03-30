@@ -1,4 +1,6 @@
-package com.project.chessbooksapp.services.importService.readers;
+package com.project.chessbooksapp.commons;
+
+import com.project.chessbooksapp.commons.Reader;
 
 import java.io.InputStream;
 

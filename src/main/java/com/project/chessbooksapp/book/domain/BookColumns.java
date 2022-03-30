@@ -1,6 +1,6 @@
-package com.project.chessbooksapp.services.importService.parsers.books;
+package com.project.chessbooksapp.book.domain;
 
-import com.project.chessbooksapp.services.importService.parsers.Column;
+import com.project.chessbooksapp.commons.Column;
 
 import java.util.Arrays;
 

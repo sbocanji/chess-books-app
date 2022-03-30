@@ -1,7 +1,8 @@
-package com.project.chessbooksapp.services.importService.parsers.authors;
+package com.project.chessbooksapp.book.application.service;
 
+import com.project.chessbooksapp.book.domain.AuthorColumns;
 import com.project.chessbooksapp.dto.AuthorDto;
-import com.project.chessbooksapp.services.importService.parsers.CSVParser;
+import com.project.chessbooksapp.commons.CSVParser;
 
 import java.util.HashMap;
 import java.util.Map;

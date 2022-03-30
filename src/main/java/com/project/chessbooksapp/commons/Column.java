@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.services.importService.parsers;
+package com.project.chessbooksapp.commons;
 
 public interface Column {
 

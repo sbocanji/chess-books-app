@@ -2,14 +2,14 @@ package com.project.chessbooksapp;
 
 import com.project.chessbooksapp.dto.AuthorDto;
 import com.project.chessbooksapp.dto.BookDto;
-import com.project.chessbooksapp.services.importService.parsers.authors.AuthorCSVParser;
-import com.project.chessbooksapp.services.importService.parsers.authors.AuthorXlsxParser;
-import com.project.chessbooksapp.services.importService.parsers.books.BookCSVParser;
-import com.project.chessbooksapp.services.importService.parsers.JsonParser;
-import com.project.chessbooksapp.services.importService.parsers.Parser;
-import com.project.chessbooksapp.services.importService.parsers.books.BookXlsxParser;
-import com.project.chessbooksapp.services.importService.readers.LocalReader;
-import com.project.chessbooksapp.services.importService.readers.Reader;
+import com.project.chessbooksapp.book.application.service.AuthorCSVParser;
+import com.project.chessbooksapp.book.application.service.AuthorXlsxParser;
+import com.project.chessbooksapp.book.application.service.BookCSVParser;
+import com.project.chessbooksapp.commons.JsonParser;
+import com.project.chessbooksapp.commons.Parser;
+import com.project.chessbooksapp.book.application.service.BookXlsxParser;
+import com.project.chessbooksapp.commons.LocalReader;
+import com.project.chessbooksapp.commons.Reader;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

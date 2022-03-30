@@ -1,8 +1,8 @@
-package com.project.chessbooksapp.services.importService.parsers.authors;
+package com.project.chessbooksapp.book.application.service;
 
+import com.project.chessbooksapp.book.domain.AuthorColumns;
 import com.project.chessbooksapp.dto.AuthorDto;
-import com.project.chessbooksapp.services.importService.parsers.XlsxParser;
-import org.apache.poi.ss.usermodel.Cell;
+import com.project.chessbooksapp.commons.XlsxParser;
 import org.apache.poi.ss.usermodel.Row;
 
 import java.util.HashMap;

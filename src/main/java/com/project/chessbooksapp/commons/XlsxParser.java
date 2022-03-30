@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.services.importService.parsers;
+package com.project.chessbooksapp.commons;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
