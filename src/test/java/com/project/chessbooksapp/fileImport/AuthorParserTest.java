@@ -2,7 +2,7 @@ package com.project.chessbooksapp.fileImport;
 
 import com.project.chessbooksapp.book.application.service.*;
 import com.project.chessbooksapp.commons.Parser;
-import com.project.chessbooksapp.dto.AuthorDto;
+import com.project.chessbooksapp.book.application.port.in.AuthorDto;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

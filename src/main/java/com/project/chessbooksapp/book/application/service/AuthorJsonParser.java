@@ -1,7 +1,7 @@
 package com.project.chessbooksapp.book.application.service;
 
 import com.project.chessbooksapp.commons.JsonParser;
-import com.project.chessbooksapp.dto.AuthorDto;
+import com.project.chessbooksapp.book.application.port.in.AuthorDto;
 
 public class AuthorJsonParser extends JsonParser<AuthorDto> {
     public AuthorJsonParser(Class entityClass) {

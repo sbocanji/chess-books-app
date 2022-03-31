@@ -1,7 +1,7 @@
 package com.project.chessbooksapp.book.application.service;
 
 import com.project.chessbooksapp.book.domain.BookColumns;
-import com.project.chessbooksapp.dto.BookDto;
+import com.project.chessbooksapp.book.application.port.in.BookDto;
 import com.project.chessbooksapp.commons.XlsxParser;
 import org.apache.poi.ss.usermodel.Row;
 

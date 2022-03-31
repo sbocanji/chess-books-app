@@ -1,9 +1,8 @@
 package com.project.chessbooksapp;
 
 import com.project.chessbooksapp.book.application.service.*;
-import com.project.chessbooksapp.dto.AuthorDto;
-import com.project.chessbooksapp.dto.BookDto;
-import com.project.chessbooksapp.commons.JsonParser;
+import com.project.chessbooksapp.book.application.port.in.AuthorDto;
+import com.project.chessbooksapp.book.application.port.in.BookDto;
 import com.project.chessbooksapp.commons.Parser;
 import com.project.chessbooksapp.commons.LocalReader;
 import com.project.chessbooksapp.commons.Reader;

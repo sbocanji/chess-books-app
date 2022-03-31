@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.dto;
+package com.project.chessbooksapp.book.application.port.in;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
