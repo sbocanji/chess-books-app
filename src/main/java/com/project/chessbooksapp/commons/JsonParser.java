@@ -1,5 +1,6 @@
 package com.project.chessbooksapp.commons;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JsonParser<T> implements Parser<T> {
+public abstract class JsonParser<T> implements Parser<T> {
 
     private Class entityClass;
 
@@ -36,6 +37,7 @@ public class JsonParser<T> implements Parser<T> {
             JsonNode jsonNode = objectMapper.readTree(fileContent);
             for (JsonNode entityObject : jsonNode) {
                 T entity = (T) objectMapper.readValue(String.valueOf((T) entityObject), entityClass);
+                if(!validate(entity)) throw new IllegalArgumentException("Invalid input.");
                 entityList.add(entity);
             }
         } catch (IOException e) {
@@ -44,4 +46,6 @@ public class JsonParser<T> implements Parser<T> {
         }
         return entityList;
     }
+
+    protected abstract boolean validate(T object);
 }

@@ -1,14 +1,8 @@
 package com.project.chessbooksapp.fileImport;
 
-import com.project.chessbooksapp.book.application.service.AuthorCSVParser;
-import com.project.chessbooksapp.book.application.service.AuthorXlsxParser;
-import com.project.chessbooksapp.book.application.service.BookCSVParser;
-import com.project.chessbooksapp.book.application.service.BookXlsxParser;
-import com.project.chessbooksapp.commons.JsonParser;
+import com.project.chessbooksapp.book.application.service.*;
 import com.project.chessbooksapp.commons.Parser;
-import com.project.chessbooksapp.commons.XlsxParser;
 import com.project.chessbooksapp.dto.AuthorDto;
-import com.project.chessbooksapp.dto.BookDto;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -30,12 +24,12 @@ public class AuthorParserTest {
         assertThat(authors).hasSize(30);
         assertThat(authors.get(0).getNationality()).isEqualTo(firstAuthor.getNationality());
         assertThat(authors.get(0).getPlayerName()).isEqualTo(firstAuthor.getPlayerName());
-        assertThat(authors.get(0).isActive()).isEqualTo(firstAuthor.isActive());
-        assertThat(authors.get(0).isWorldChampion()).isEqualTo(firstAuthor.isWorldChampion());
+        assertThat(authors.get(0).getActive()).isEqualTo(firstAuthor.getActive());
+        assertThat(authors.get(0).getWorldChampion()).isEqualTo(firstAuthor.getWorldChampion());
         assertThat(authors.get(1).getPlayerName()).isEqualTo(secondAuthor.getPlayerName());
         assertThat(authors.get(1).getNationality()).isEqualTo(secondAuthor.getNationality());
-        assertThat(authors.get(1).isActive()).isEqualTo(secondAuthor.isActive());
-        assertThat(authors.get(1).isWorldChampion()).isEqualTo(secondAuthor.isWorldChampion());
+        assertThat(authors.get(1).getActive()).isEqualTo(secondAuthor.getActive());
+        assertThat(authors.get(1).getWorldChampion()).isEqualTo(secondAuthor.getWorldChampion());
         assertThatThrownBy(() -> authorDtoParser.readEntities(classloader.getResourceAsStream("igraciWithError.csv"))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Invalid input.");
     }
 
@@ -44,18 +38,18 @@ public class AuthorParserTest {
         AuthorDto firstAuthor = new AuthorDto("Bobby Fischer", false, true, "USA");
         AuthorDto secondAuthor = new AuthorDto("Anatoly Karpov", false, true, "Russia");
 
-        authorDtoParser = new JsonParser<>(AuthorDto.class);
+        authorDtoParser = new AuthorJsonParser(AuthorDto.class);
         List<AuthorDto> authors = authorDtoParser.readEntities(classloader.getResourceAsStream("igraciJson.json"));
         assertThat(authors).hasSize(30);
         assertThat(authors.get(0).getNationality()).isEqualTo(firstAuthor.getNationality());
         assertThat(authors.get(0).getPlayerName()).isEqualTo(firstAuthor.getPlayerName());
-        assertThat(authors.get(0).isActive()).isEqualTo(firstAuthor.isActive());
-        assertThat(authors.get(0).isWorldChampion()).isEqualTo(firstAuthor.isWorldChampion());
+        assertThat(authors.get(0).getActive()).isEqualTo(firstAuthor.getActive());
+        assertThat(authors.get(0).getWorldChampion()).isEqualTo(firstAuthor.getWorldChampion());
         assertThat(authors.get(1).getPlayerName()).isEqualTo(secondAuthor.getPlayerName());
         assertThat(authors.get(1).getNationality()).isEqualTo(secondAuthor.getNationality());
-        assertThat(authors.get(1).isActive()).isEqualTo(secondAuthor.isActive());
-        assertThat(authors.get(1).isWorldChampion()).isEqualTo(secondAuthor.isWorldChampion());
-//        assertThatThrownBy(() -> authorDtoParser.readEntities(classloader.getResourceAsStream("knjigeWithError.json"))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Invalid input.");
+        assertThat(authors.get(1).getActive()).isEqualTo(secondAuthor.getActive());
+        assertThat(authors.get(1).getWorldChampion()).isEqualTo(secondAuthor.getWorldChampion());
+        assertThatThrownBy(() -> authorDtoParser.readEntities(classloader.getResourceAsStream("igraciWithError.json"))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Invalid input.");
     }
 
     @Test
@@ -68,12 +62,12 @@ public class AuthorParserTest {
         assertThat(authors).hasSize(30);
         assertThat(authors.get(0).getNationality()).isEqualTo(firstAuthor.getNationality());
         assertThat(authors.get(0).getPlayerName()).isEqualTo(firstAuthor.getPlayerName());
-        assertThat(authors.get(0).isActive()).isEqualTo(firstAuthor.isActive());
-        assertThat(authors.get(0).isWorldChampion()).isEqualTo(firstAuthor.isWorldChampion());
+        assertThat(authors.get(0).getActive()).isEqualTo(firstAuthor.getActive());
+        assertThat(authors.get(0).getWorldChampion()).isEqualTo(firstAuthor.getWorldChampion());
         assertThat(authors.get(1).getPlayerName()).isEqualTo(secondAuthor.getPlayerName());
         assertThat(authors.get(1).getNationality()).isEqualTo(secondAuthor.getNationality());
-        assertThat(authors.get(1).isActive()).isEqualTo(secondAuthor.isActive());
-        assertThat(authors.get(1).isWorldChampion()).isEqualTo(secondAuthor.isWorldChampion());
+        assertThat(authors.get(1).getActive()).isEqualTo(secondAuthor.getActive());
+        assertThat(authors.get(1).getWorldChampion()).isEqualTo(secondAuthor.getWorldChampion());
         assertThatThrownBy(() -> authorDtoParser.readEntities(classloader.getResourceAsStream("igraciWithError.xlsx"))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("Invalid input.");
     }
 }

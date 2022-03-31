@@ -1,6 +1,7 @@
 package com.project.chessbooksapp.fileImport;
 
 import com.project.chessbooksapp.book.application.service.BookCSVParser;
+import com.project.chessbooksapp.book.application.service.BookJsonParser;
 import com.project.chessbooksapp.book.application.service.BookXlsxParser;
 import com.project.chessbooksapp.commons.JsonParser;
 import com.project.chessbooksapp.commons.Parser;
@@ -40,7 +41,7 @@ public class BookParserTest {
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
-        bookDtoParser = new JsonParser<>(BookDto.class);
+        bookDtoParser = new BookJsonParser(BookDto.class);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjigeJson.json"));
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());

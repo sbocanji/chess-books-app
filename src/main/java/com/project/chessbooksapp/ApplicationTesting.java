@@ -1,13 +1,10 @@
 package com.project.chessbooksapp;
 
+import com.project.chessbooksapp.book.application.service.*;
 import com.project.chessbooksapp.dto.AuthorDto;
 import com.project.chessbooksapp.dto.BookDto;
-import com.project.chessbooksapp.book.application.service.AuthorCSVParser;
-import com.project.chessbooksapp.book.application.service.AuthorXlsxParser;
-import com.project.chessbooksapp.book.application.service.BookCSVParser;
 import com.project.chessbooksapp.commons.JsonParser;
 import com.project.chessbooksapp.commons.Parser;
-import com.project.chessbooksapp.book.application.service.BookXlsxParser;
 import com.project.chessbooksapp.commons.LocalReader;
 import com.project.chessbooksapp.commons.Reader;
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +20,7 @@ public class ApplicationTesting implements CommandLineRunner {
         Reader localReader = new LocalReader();
         InputStream inputStreamBooks = localReader.readFile("knjige");
         InputStream inputStreamAuthors = localReader.readFile("igraci");
-        InputStream inputStreamBooksJson = localReader.readFile("knjigeJson.json");
+        InputStream inputStreamBooksJson = localReader.readFile("knjigeWithError.json");
         InputStream inputStreamAuthorsJson = localReader.readFile("igraciJson.json");
         InputStream inputStreamBooksExcel = localReader.readFile("knjigeExcel.xlsx");
         InputStream inputStreamAuthorsExcel = localReader.readFile("igraciXlsx.xlsx");
@@ -37,20 +34,20 @@ public class ApplicationTesting implements CommandLineRunner {
         AuthorCSVParser authorReader = new AuthorCSVParser();
         List<AuthorDto> authors = authorReader.readEntities(inputStreamAuthors);
         for (AuthorDto author : authors)
-            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampion());
+            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.getActive() + ", worldChampionship: " + author.getWorldChampion());
 
         System.out.println("\n\n\n");
 
-        Parser<BookDto> jsonReader = new JsonParser<>(BookDto.class);
+        Parser<BookDto> jsonReader = new BookJsonParser(BookDto.class);
         List<BookDto> newBooks = jsonReader.readEntities(inputStreamBooksJson);
         for (BookDto book : newBooks) System.out.println("ID: " + book.getId() + ", name: " + book.getBookName() + ", author: " + book.getAuthor());
 
         System.out.println("\n\n\n");
 
-        Parser<AuthorDto> jsonReaderAuthors = new JsonParser<>(AuthorDto.class);
+        Parser<AuthorDto> jsonReaderAuthors = new AuthorJsonParser(AuthorDto.class);
         List<AuthorDto> newAuthors = jsonReaderAuthors.readEntities(inputStreamAuthorsJson);
         for (AuthorDto author : newAuthors)
-            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampion());
+            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.getActive() + ", worldChampionship: " + author.getWorldChampion());
 
         System.out.println("\n\n\n");
 
@@ -63,7 +60,7 @@ public class ApplicationTesting implements CommandLineRunner {
         Parser<AuthorDto> xlsxParserAuthor = new AuthorXlsxParser();
         List<AuthorDto> authorsXlsx = xlsxParserAuthor.readEntities(inputStreamAuthorsExcel);
         for (AuthorDto author : authorsXlsx)
-            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.isActive() + ", worldChampionship: " + author.isWorldChampion());
+            System.out.println("Name: " + author.getPlayerName() + ", nationality: " + author.getNationality() + ", active: " + author.getActive() + ", worldChampionship: " + author.getWorldChampion());
 
 
     }

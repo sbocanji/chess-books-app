@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class AuthorDto {
     private String playerName;
-    private boolean active;
-    private boolean worldChampion;
+    private Boolean active;
+    private Boolean worldChampion;
     private String nationality;
 }
