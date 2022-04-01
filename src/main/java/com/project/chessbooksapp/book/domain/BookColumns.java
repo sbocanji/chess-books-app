@@ -1,5 +1,4 @@
 package com.project.chessbooksapp.book.domain;
-
 import com.project.chessbooksapp.commons.Column;
 
 import java.util.Arrays;

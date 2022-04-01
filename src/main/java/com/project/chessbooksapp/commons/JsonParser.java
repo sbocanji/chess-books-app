@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.project.chessbooksapp.commons.Parser;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
