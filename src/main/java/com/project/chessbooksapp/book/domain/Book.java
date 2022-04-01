@@ -1,17 +1,21 @@
 package com.project.chessbooksapp.book.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+import javax.persistence.*;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Book {
-    private Integer id;
+
+    @Id
+    private String id;
+    @Column
     private String bookName;
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
 }
