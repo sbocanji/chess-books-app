@@ -1,14 +1,16 @@
 package com.project.chessbooksapp.book.domain;
 
-import com.project.chessbooksapp.book.domain.ReccomendBookChain;
 import com.project.chessbooksapp.book.dto.BookDto;
 import com.project.chessbooksapp.book.dto.UserDto;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-public class ActivePlayerRule implements ReccomendBookChain {
-    private ReccomendBookChain nextInChain;
+//@Component("active")
+public class ActivePlayerRule implements RecommendBookChain {
+    private RecommendBookChain nextInChain;
 
     @Override
-    public void setNext(ReccomendBookChain nextInChain) {
+    public void setNext(RecommendBookChain nextInChain) {
         this.nextInChain = nextInChain;
     }
 

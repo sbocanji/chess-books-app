@@ -24,7 +24,6 @@ public class ChessBooksAppApplication {
 
         BookRecommendationServiceImpl rs = new BookRecommendationServiceImpl(null);
         List<BookDto> book = rs.getPreferencedBook(books, new UserDto("milos", "milos@gmail.com", true, true));
-        //System.out.println(book.getBookName());
         SpringApplication.run(ChessBooksAppApplication.class, args);
     }
 

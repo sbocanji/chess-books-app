@@ -1,12 +1,13 @@
 package com.project.chessbooksapp.book.domain;
 
-import com.project.chessbooksapp.book.domain.ReccomendBookChain;
 import com.project.chessbooksapp.book.dto.BookDto;
 import com.project.chessbooksapp.book.dto.UserDto;
+import org.springframework.stereotype.Component;
 
-public class WorldChampionRule implements ReccomendBookChain {
+@Component("world")
+public class WorldChampionRule implements RecommendBookChain {
     @Override
-    public void setNext(ReccomendBookChain nextInChain) {
+    public void setNext(RecommendBookChain nextInChain) {
 
     }
 
