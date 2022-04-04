@@ -2,11 +2,10 @@ package com.project.chessbooksapp;
 
 import com.project.chessbooksapp.book.application.port.in.BookDto;
 import com.project.chessbooksapp.book.application.port.in.AuthorDto;
-import com.project.chessbooksapp.book.application.service.AuthorCSVParser;
-import com.project.chessbooksapp.book.application.service.AuthorJsonParser;
-import com.project.chessbooksapp.book.application.service.BookCSVParser;
-import com.project.chessbooksapp.book.application.service.BookJsonParser;
-import com.project.chessbooksapp.commons.JsonParser;
+import com.project.chessbooksapp.book.application.parsers.AuthorCSVParser;
+import com.project.chessbooksapp.book.application.parsers.AuthorJsonParser;
+import com.project.chessbooksapp.book.application.parsers.BookCSVParser;
+import com.project.chessbooksapp.book.application.parsers.BookJsonParser;
 import com.project.chessbooksapp.commons.LocalReader;
 import com.project.chessbooksapp.commons.Parser;
 import org.springframework.boot.CommandLineRunner;

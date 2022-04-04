@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.book.application.service;
+package com.project.chessbooksapp.book.application.parsers;
 
 import com.project.chessbooksapp.book.domain.BookColumns;
 import com.project.chessbooksapp.book.application.port.in.BookDto;

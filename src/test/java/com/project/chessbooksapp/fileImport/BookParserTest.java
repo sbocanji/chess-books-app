@@ -1,5 +1,8 @@
 package com.project.chessbooksapp.fileImport;
 
+import com.project.chessbooksapp.book.application.parsers.factories.BookParserFactory;
+import com.project.chessbooksapp.book.application.parsers.factories.FileType;
+import com.project.chessbooksapp.book.application.parsers.factories.ParserFactory;
 import com.project.chessbooksapp.book.application.port.in.*;
 import com.project.chessbooksapp.commons.Parser;
 import org.junit.jupiter.api.Test;
@@ -21,7 +24,7 @@ public class BookParserTest {
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
-        bookDtoParser = bookParserFactory.getParser("csv");
+        bookDtoParser = bookParserFactory.getParser(FileType.CSV);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjige"));
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());
@@ -38,7 +41,7 @@ public class BookParserTest {
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
-        bookDtoParser = bookParserFactory.getParser("json");
+        bookDtoParser = bookParserFactory.getParser(FileType.JSON);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjigeJson.json"));
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());
@@ -55,7 +58,7 @@ public class BookParserTest {
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
-        bookDtoParser = bookParserFactory.getParser("xlsx");
+        bookDtoParser = bookParserFactory.getParser(FileType.XLSX);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjigeExcel.xlsx"));
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());
