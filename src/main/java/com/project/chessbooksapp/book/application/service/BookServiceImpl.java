@@ -14,6 +14,7 @@ import com.project.chessbooksapp.commons.Parser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    @Transactional
     public List<Book> save(InputStream inputStream, FileType fileType) {
         ParserFactory<BookDto> parserFactory = new BookParserFactory();
         Parser<BookDto> bookDtoParser = parserFactory.getParser(fileType);

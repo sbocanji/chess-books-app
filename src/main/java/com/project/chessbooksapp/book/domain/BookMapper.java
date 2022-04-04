@@ -22,7 +22,7 @@ public class BookMapper {
         book.setId(bookDto.getId());
         Author author = authorRepository.findByPlayerName(bookDto.getAuthor()).get();
         book.setAuthor(author);
-//        author.getBooks().add(book);
+        author.getBooks().add(book);
         authorRepository.save(author);
         return book;
     }
