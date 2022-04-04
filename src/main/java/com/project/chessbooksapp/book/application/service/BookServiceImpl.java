@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
     @Override
-    public List<BookDto> parse(InputStream inputStream, FileType fileType) {
+    public List<BookDto> save(InputStream inputStream, FileType fileType) {
         ParserFactory<BookDto> parserFactory = new BookParserFactory();
         Parser<BookDto> bookDtoParser = parserFactory.getParser(fileType);
         return null;

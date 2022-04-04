@@ -7,8 +7,8 @@ import java.io.InputStream;
 import java.util.List;
 
 @Service
-public interface ParserService<T> {
+public interface SaveService<T> {
 
-    List<T> parse(InputStream inputStream, FileType fileType);
+    List<T> save(InputStream inputStream, FileType fileType);
 
 }
