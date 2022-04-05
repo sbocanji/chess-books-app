@@ -19,8 +19,6 @@ public class BookMapper {
         book.setId(bookDto.getId());
         Author author = authorRepository.findByPlayerName(bookDto.getAuthor()).orElseThrow(() -> new IllegalArgumentException("Invalid author name."));
         book.setAuthor(author);
-        author.getBooks().add(book);
-        authorRepository.save(author);
         return book;
     }
 
