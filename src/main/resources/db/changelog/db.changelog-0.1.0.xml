@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+                            http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+    <changeSet author="unknown" id="insert-role">
+        <insert tableName="role">
+            <column name="id" value="1"/>
+            <column name="authority" value="ADMIN"/>
+        </insert>
+        <insert tableName="role">
+            <column name="id" value="2"/>
+            <column name="authority" value="USER"/>
+        </insert>
+    </changeSet>
+    <changeSet author="unknown" id="insert-admin" >
+        <insert tableName="user_account">
+            <column name="id" value="1"/>
+            <column name="first_name" value="Admin"/>
+            <column name="last_name" value="Team"/>
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$12$bbWdU8BVafU0MoWtXDM2n.ilyPELQ9u.iPY4HXTXbwm.Cpr2bxQXK"/>
+            <column name="enabled" value="true"/>
+        </insert>
+    </changeSet>
+    <changeSet author="unknown" id="insert-admin-role" >
+        <sql>
+            INSERT INTO user_account_authorities (user_id, authorities_id) SELECT u.id, r.id FROM user_account u, role r WHERE u.username='admin' AND r.authority='ADMIN'
+        </sql>
+    </changeSet>
+</databaseChangeLog>
