@@ -9,6 +9,7 @@ import com.project.chessbooksapp.book.application.port.out.AuthorRepository;
 import com.project.chessbooksapp.book.domain.Author;
 import com.project.chessbooksapp.book.domain.AuthorMapper;
 import com.project.chessbooksapp.commons.Parser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,16 +17,11 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class AuthorServiceImpl implements AuthorService {
-    private AuthorRepository authorRepository;
-    private AuthorMapper authorMapper;
-
-    @Autowired
-    public AuthorServiceImpl(AuthorRepository authorRepository, AuthorMapper authorMapper) {
-        this.authorRepository = authorRepository;
-        this.authorMapper = authorMapper;
-    }
+    private final AuthorRepository authorRepository;
+    private final AuthorMapper authorMapper;
 
     @Override
     public List<Author> save(InputStream inputStream, FileType fileType) {
