@@ -9,8 +9,11 @@ import com.project.chessbooksapp.commons.Parser;
 public class AuthorParserFactory implements ParserFactory<AuthorDto>{
     @Override
     public Parser<AuthorDto> getParser(FileType fileType) {
-        if(fileType == FileType.JSON) return new AuthorJsonParser(AuthorDto.class);
-        if(fileType == FileType.XLSX) return new AuthorXlsxParser();
-        return new AuthorCSVParser();
+        switch (fileType) {
+            case JSON: return new AuthorJsonParser(AuthorDto.class);
+            case XLSX: return new AuthorXlsxParser();
+            case CSV: return new AuthorCSVParser();
+            default: throw new IllegalArgumentException("Invalid file type provided.");
+        }
     }
 }
