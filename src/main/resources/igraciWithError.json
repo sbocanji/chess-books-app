@@ -1,0 +1,182 @@
+[
+  {
+    "playerName": "Bobby Fischer",
+    "worldChampion": "y",
+    "nationality": "USA",
+    "active": "n"
+  },
+  {
+    "playerName": "Anatoly Karpov",
+    "worldChampion": "y",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Garry Kasparov",
+    "worldChampion": "y",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Svetozar Gligoric",
+    "worldChampion": "n",
+    "nationality": "Serbia",
+    "active": "n"
+  },
+  {
+    "playerName": "Magnus Carlsen",
+    "worldChampion": "y",
+    "nationality": "Norway",
+    "active": "y"
+  },
+  {
+    "playerName": "Viswanathan Anand",
+    "worldChampion": "y",
+    "nationality": "India",
+    "active": "y"
+  },
+  {
+    "playerName": "AA",
+    "worldChampion": "",
+    "nationality": "Russia",
+    "active": "y"
+  },
+  {
+    "playerName": "Veselin Topalov",
+    "worldChampion": "y",
+    "nationality": "Bulgaria",
+    "active": "y"
+  },
+  {
+    "playerName": "Sergey Karjakin",
+    "worldChampion": "n",
+    "nationality": "Russia",
+    "active": "y"
+  },
+  {
+    "playerName": "Yasser Seirawan",
+    "worldChampion": "n",
+    "nationality": "USA",
+    "active": "n"
+  },
+  {
+    "playerName": "Vassily Ivanchuk",
+    "worldChampion": "n",
+    "nationality": "Ukraine",
+    "active": "y"
+  },
+  {
+    "playerName": "Alexei Shirov",
+    "worldChampion": "n",
+    "nationality": "Spain",
+    "active": "n"
+  },
+  {
+    "playerName": "Judit Polgar",
+    "worldChampion": "n",
+    "nationality": "Hungary",
+    "active": "n"
+  },
+  {
+    "playerName": "Michael Adams",
+    "worldChampion": "n",
+    "nationality": "UK",
+    "active": "n"
+  },
+  {
+    "playerName": "Peter Leko",
+    "worldChampion": "n",
+    "nationality": "Hungary",
+    "active": "n"
+  },
+  {
+    "playerName": "Ljubomir Ljubojevic",
+    "worldChampion": "n",
+    "nationality": "Serbia",
+    "active": "n"
+  },
+  {
+    "playerName": "Mikhail Tal",
+    "worldChampion": "y",
+    "nationality": "Latvia",
+    "active": "n"
+  },
+  {
+    "playerName": "Viktor Korchnoi",
+    "worldChampion": "n",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Vasily Smyslov",
+    "worldChampion": "y",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Tigran Petrosian",
+    "worldChampion": "y",
+    "nationality": "Armenia",
+    "active": "n"
+  },
+  {
+    "playerName": "Bent Larsen",
+    "worldChampion": "n",
+    "nationality": "Denmark",
+    "active": "n"
+  },
+  {
+    "playerName": "Boris Spassky",
+    "worldChampion": "y",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Ulf Andersson",
+    "worldChampion": "n",
+    "nationality": "Sweden",
+    "active": "n"
+  },
+  {
+    "playerName": "Paul Morphy",
+    "worldChampion": "y",
+    "nationality": "USA",
+    "active": "n"
+  },
+  {
+    "playerName": "Mikhail Botvinnik",
+    "worldChampion": "y",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Jose Raul Capablanca",
+    "worldChampion": "y",
+    "nationality": "Cuba",
+    "active": "n"
+  },
+  {
+    "playerName": "Alexander Alekhine",
+    "worldChampion": "y",
+    "nationality": "Russia",
+    "active": "n"
+  },
+  {
+    "playerName": "Emanuel Lasker",
+    "worldChampion": "y",
+    "nationality": "Germany",
+    "active": "n"
+  },
+  {
+    "playerName": "Frank Marshall",
+    "worldChampion": "n",
+    "nationality": "USA",
+    "active": "n"
+  },
+  {
+    "playerName": "Wilhelm Steinitz",
+    "worldChampion": "y",
+    "nationality": "USA",
+    "active": "n"
+  }
+]
