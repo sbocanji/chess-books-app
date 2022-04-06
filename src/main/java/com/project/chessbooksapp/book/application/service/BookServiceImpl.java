@@ -11,6 +11,7 @@ import com.project.chessbooksapp.book.domain.Author;
 import com.project.chessbooksapp.book.domain.Book;
 import com.project.chessbooksapp.book.domain.BookMapper;
 import com.project.chessbooksapp.commons.Parser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,17 +21,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class BookServiceImpl implements BookService {
 
-    private BookRepository bookRepository;
-    private BookMapper bookMapper;
-
-    @Autowired
-    public BookServiceImpl(BookRepository bookRepository, BookMapper bookMapper) {
-        this.bookRepository = bookRepository;
-        this.bookMapper = bookMapper;
-    }
+    private final BookRepository bookRepository;
+    private final BookMapper bookMapper;
 
     @Override
     @Transactional
