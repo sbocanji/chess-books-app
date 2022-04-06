@@ -1,4 +1,5 @@
 package com.project.chessbooksapp.book.domain;
+
 import com.project.chessbooksapp.commons.Column;
 
 import java.util.Arrays;
@@ -6,7 +7,8 @@ import java.util.Arrays;
 public enum BookColumns implements Column {
     ID("id", true),
     NAME("bookName", true),
-    AUTHOR("author", true);
+    AUTHOR("author", true),
+    STORES("stores", true);
 
     private final String columnName;
     private final boolean mandatory;
