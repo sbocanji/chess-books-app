@@ -1,9 +1,7 @@
 package com.project.chessbooksapp.savingService;
 
-import com.project.chessbooksapp.book.application.parsers.factories.AuthorParserFactory;
 import com.project.chessbooksapp.book.application.parsers.factories.FileType;
-import com.project.chessbooksapp.book.application.port.in.AuthorService;
-import com.project.chessbooksapp.book.application.service.AuthorServiceImpl;
+import com.project.chessbooksapp.book.application.service.SaveAuthorServiceImpl;
 import com.project.chessbooksapp.commons.LocalReader;
 import com.project.chessbooksapp.commons.Reader;
 import org.junit.jupiter.api.Test;
@@ -16,7 +14,7 @@ import java.io.InputStream;
 public class AuthorSaveServiceTest {
 
     @Autowired
-    AuthorServiceImpl authorService;
+    SaveAuthorServiceImpl authorService;
     Reader reader = new LocalReader();
     InputStream inputStream = reader.readFile("igraci");
 

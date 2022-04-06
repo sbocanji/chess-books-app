@@ -2,14 +2,13 @@ package com.project.chessbooksapp.store.domain;
 
 
 import com.project.chessbooksapp.book.domain.Book;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -23,9 +22,9 @@ public class Store {
     private String name;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
-            name = "Store-Books",
-            joinColumns = {@JoinColumn(name = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "id")}
+            name = "store_book",
+            joinColumns = {@JoinColumn(name = "store_id")},
+            inverseJoinColumns = {@JoinColumn(name = "book_id")}
     )
     private List<Book> books;
 }

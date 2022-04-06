@@ -4,13 +4,12 @@ import com.project.chessbooksapp.book.application.parsers.factories.AuthorParser
 import com.project.chessbooksapp.book.application.parsers.factories.FileType;
 import com.project.chessbooksapp.book.application.parsers.factories.ParserFactory;
 import com.project.chessbooksapp.book.application.port.in.AuthorDto;
-import com.project.chessbooksapp.book.application.port.in.AuthorService;
+import com.project.chessbooksapp.book.application.port.in.SaveAuthorService;
 import com.project.chessbooksapp.book.application.port.out.AuthorRepository;
 import com.project.chessbooksapp.book.domain.Author;
 import com.project.chessbooksapp.book.domain.AuthorMapper;
 import com.project.chessbooksapp.commons.Parser;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
@@ -19,7 +18,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class AuthorServiceImpl implements AuthorService {
+public class SaveAuthorServiceImpl implements SaveAuthorService {
     private final AuthorRepository authorRepository;
     private final AuthorMapper authorMapper;
 

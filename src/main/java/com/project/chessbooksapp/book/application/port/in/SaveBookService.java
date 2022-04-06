@@ -4,5 +4,5 @@ import com.project.chessbooksapp.book.domain.Book;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface BookService extends SaveService<Book> {
+public interface SaveBookService extends SaveService<Book> {
 }
