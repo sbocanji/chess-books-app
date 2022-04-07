@@ -4,7 +4,6 @@ import com.project.chessbooksapp.book.dto.BookDto;
 import com.project.chessbooksapp.book.dto.UserDto;
 import org.springframework.stereotype.Component;
 
-@Component("world")
 public class WorldChampionRule implements RecommendBookChain {
     @Override
     public void setNext(RecommendBookChain nextInChain) {

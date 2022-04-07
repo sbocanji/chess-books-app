@@ -5,7 +5,6 @@ import com.project.chessbooksapp.book.dto.UserDto;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-//@Component("active")
 public class ActivePlayerRule implements RecommendBookChain {
     private RecommendBookChain nextInChain;
 
