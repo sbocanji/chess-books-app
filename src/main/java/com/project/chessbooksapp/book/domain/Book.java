@@ -1,6 +1,5 @@
 package com.project.chessbooksapp.book.domain;
 
-import com.project.chessbooksapp.store.domain.Store;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,8 +19,8 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
-//    @ManyToMany(mappedBy = "books")
-//    private List<Store> stores;
     @OneToMany(mappedBy = "book")
     private List<BookInStore> bookInStores;
+    @OneToMany(mappedBy = "book")
+    private List<Order> orders;
 }
