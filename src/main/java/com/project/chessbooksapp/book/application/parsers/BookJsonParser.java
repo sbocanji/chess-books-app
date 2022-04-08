@@ -4,7 +4,7 @@ import com.project.chessbooksapp.commons.JsonParser;
 import com.project.chessbooksapp.book.application.port.in.BookDto;
 
 public class BookJsonParser extends JsonParser<BookDto> {
-    public BookJsonParser(Class entityClass) {
+    public BookJsonParser(Class<BookDto> entityClass) {
         super(entityClass);
     }
 

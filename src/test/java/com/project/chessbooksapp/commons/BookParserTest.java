@@ -1,10 +1,9 @@
-package com.project.chessbooksapp.fileImport;
+package com.project.chessbooksapp.commons;
 
 import com.project.chessbooksapp.book.application.parsers.factories.BookParserFactory;
 import com.project.chessbooksapp.book.application.parsers.factories.FileType;
 import com.project.chessbooksapp.book.application.parsers.factories.ParserFactory;
 import com.project.chessbooksapp.book.application.port.in.*;
-import com.project.chessbooksapp.commons.Parser;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -21,11 +20,15 @@ public class BookParserTest {
 
     @Test
     void testCSVBookParser() {
+        // Given
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
+        // When
         bookDtoParser = bookParserFactory.getParser(FileType.CSV);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjige"));
+
+        // Then
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());
         assertThat(books.get(0).getId()).isEqualTo(firstBook.getId());
@@ -38,11 +41,15 @@ public class BookParserTest {
 
     @Test
     void testJsonBookParser() {
+        // Given
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
+        // When
         bookDtoParser = bookParserFactory.getParser(FileType.JSON);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjigeJson.json"));
+
+        // Then
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());
         assertThat(books.get(0).getId()).isEqualTo(firstBook.getId());
@@ -55,11 +62,15 @@ public class BookParserTest {
 
     @Test
     void testExcelBookParser() {
+        // Given
         BookDto firstBook = new BookDto("0-571-09987-4", "My 60 Memorable Games", "Bobby Fischer");
         BookDto secondBook = new BookDto("978-0713478433", "Anatoly Karpov's Best Games", "Anatoly Karpov");
 
+        // When
         bookDtoParser = bookParserFactory.getParser(FileType.XLSX);
         List<BookDto> books = bookDtoParser.readEntities(classloader.getResourceAsStream("knjigeExcel.xlsx"));
+
+        // Then
         assertThat(books).hasSize(21);
         assertThat(books.get(0).getBookName()).isEqualTo(firstBook.getBookName());
         assertThat(books.get(0).getId()).isEqualTo(firstBook.getId());
