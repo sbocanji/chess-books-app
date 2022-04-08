@@ -1,4 +1,4 @@
-package com.project.chessbooksapp.book.application.port;
+package com.project.chessbooksapp.book.application.service;
 
 import com.project.chessbooksapp.book.application.port.in.AuthorizationService;
 import com.project.chessbooksapp.book.domain.Role;

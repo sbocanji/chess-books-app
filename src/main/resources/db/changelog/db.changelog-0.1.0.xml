@@ -17,11 +17,10 @@
     </changeSet>
     <changeSet author="unknown" id="insert-admin" >
         <insert tableName="user_account">
-            <column name="id" value="1"/>
             <column name="first_name" value="Admin"/>
             <column name="last_name" value="Team"/>
             <column name="username" value="admin"/>
-            <column name="password" value="$2a$12$bbWdU8BVafU0MoWtXDM2n.ilyPELQ9u.iPY4HXTXbwm.Cpr2bxQXK"/>
+            <column name="password" value="$2a$12$EF5uNRj0Z4SvieggBTQ58.bAjWE22djvAASRLSNfBT8yojiDEr4pa"/>
             <column name="enabled" value="true"/>
         </insert>
     </changeSet>
