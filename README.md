@@ -46,7 +46,7 @@ The **adapter package** contains the incoming adapters that call the application
 
 ![](package-structure.png)
 
-#Liquibase
+# Liquibase
 
 Liquibase is open-source library used in this project for tracking, managing and applying database schema changes.
 If there is a need to, for example, add one new column in existing table, migration script must be created.
