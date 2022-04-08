@@ -27,7 +27,11 @@ public class BuyBookServiceImpl implements BuyBookService {
                 bookInStoreNew.setQuantity(bookInStoreNew.getQuantity() - 1);
                 bookInStoreRepository.save(bookInStoreNew);
             }
+            if (booksInStore.get(i).getBook().equals(book) && booksInStore.get(i).getStore().equals(store) && booksInStore.get(i).getQuantity() == 0) {
+                bookInStoreNew = booksInStore.get(0);
+                orderBookService.orderBook(bookInStoreNew);
+            }
         }
-        orderBookService.orderBook(bookInStoreNew);
+
     }
 }
