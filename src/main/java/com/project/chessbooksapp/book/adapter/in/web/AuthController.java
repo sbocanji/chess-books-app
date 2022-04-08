@@ -40,7 +40,6 @@ public class AuthController {
             Authentication authentication = this.authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(authUserRequest.getUsername(), authUserRequest.getPassword()));
             User user = (User) authentication.getPrincipal();
-            System.out.println(user.getUsername() + " " + user.getPassword());
             return ResponseEntity.ok()
                     .header(HttpHeaders.AUTHORIZATION, this.jwtUtil.generateAccessToken(user))
                     .body(user);
