@@ -16,9 +16,9 @@ import java.util.List;
 
 public abstract class JsonParser<T> implements Parser<T> {
 
-    private Class entityClass;
+    private final Class<T> entityClass;
 
-    public JsonParser(Class entityClass) {
+    public JsonParser(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
 
