@@ -20,6 +20,8 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
-    @ManyToMany(mappedBy = "books")
-    private List<Store> stores;
+//    @ManyToMany(mappedBy = "books")
+//    private List<Store> stores;
+    @OneToMany(mappedBy = "book")
+    private List<BookInStore> bookInStores;
 }

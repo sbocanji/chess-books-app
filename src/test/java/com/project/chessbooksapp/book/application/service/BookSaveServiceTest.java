@@ -2,6 +2,7 @@ package com.project.chessbooksapp.book.application.service;
 
 import com.project.chessbooksapp.book.application.parsers.factories.FileType;
 import com.project.chessbooksapp.book.application.port.in.BookDto;
+import com.project.chessbooksapp.book.application.port.in.SaveBookService;
 import com.project.chessbooksapp.book.application.port.out.BookRepository;
 import com.project.chessbooksapp.commons.LocalReader;
 import com.project.chessbooksapp.commons.Reader;
@@ -18,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class BookSaveServiceTest {
 
     @Autowired
-    BookServiceImpl bookService;
+    SaveBookService bookService;
     @Autowired
     BookRepository bookRepository;
     Reader reader = new LocalReader();

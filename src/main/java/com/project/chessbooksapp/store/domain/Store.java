@@ -2,6 +2,7 @@ package com.project.chessbooksapp.store.domain;
 
 
 import com.project.chessbooksapp.book.domain.Book;
+import com.project.chessbooksapp.book.domain.BookInStore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,11 +21,13 @@ public class Store {
     private String location;
     @Column
     private String name;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(
-            name = "store_book",
-            joinColumns = {@JoinColumn(name = "store_id")},
-            inverseJoinColumns = {@JoinColumn(name = "book_id")}
-    )
-    private List<Book> books;
+//    @ManyToMany(cascade = {CascadeType.ALL})
+//    @JoinTable(
+//            name = "store_book",
+//            joinColumns = {@JoinColumn(name = "store_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "book_id")}
+//    )
+//    private List<Book> books;
+    @OneToMany(mappedBy = "store")
+    private List<BookInStore> bookInStores;
 }
